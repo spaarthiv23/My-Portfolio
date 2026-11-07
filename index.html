@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* GENERAL SETTINGS */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    animation: fadeUp 1s ease;
+}
+
+/* BUTTON ANIMATION */
+
+.btn {
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #60a5fa;
+    transform: translateY(-4px);
+}
+
+/* PROJECT CARD ANIMATION */
+
+.project-card {
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+      
+/* PROFESSIONAL NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.95);
+    padding: 18px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+nav h2 {
+    color: #60a5fa;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #60a5fa;
+    text-shadow: 0 0 10px #60a5fa;
+}
+
+    body {
+    background-color: #101827;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+    h1 {
+        color: #60a5fa;
+    }
+    nav a:hover {
+    color: #60a5fa;
+    transition: 0.3s;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.welcome {
+    color: #60a5fa;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero h2 {
+    color: #60a5fa;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #cbd5e1;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+#about, #skills {
+    padding: 50px 10%;
+}
+
+#about p {
+    line-height: 1.8;
+}
+
+.skill {
+    display: inline-block;
+    background-color: #1e293b;
+    padding: 12px 20px;
+    margin: 8px;
+    border-radius: 8px;
+    color: #60a5fa;
+}
+
+#projects {
+    padding: 50px 10%;
+}
+
+.project-card {
+    background-color: #1e293b;
+    padding: 25px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+.project-card h3 {
+    color: #60a5fa;
+}
+
+.project-card p {
+    color: #cbd5e1;
+}
+
+
+/* PREMIUM PROJECT SCROLL ANIMATION */
+
+.project-card {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    will-change: opacity, transform;
+}
+
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+#contact {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+#contact p {
+    color: #cbd5e1;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* MOBILE RESPONSIVE DESIGN */
+
+
+@media (max-width: 600px) {
+
+    
+nav {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+}
+
+nav h2 {
+    font-size: 20px;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.menu-toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+    .hero {
+        padding: 65px 15px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    #about, #skills, #projects, #gallery {
+        padding: 35px 6%;
+    }
+
+    .project-card {
+        padding: 18px;
+    }
+
+    .design-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* REDUCE ANIMATION IF REQUESTED */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* CANVA DESIGN GALLERY */
+
+#gallery {
+    padding: 50px 10%;
+}
+
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.design-card {
+    background-color: #1e293b;
+    padding: 12px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.design-card:hover {
+    transform: translateY(-6px);
+}
+
+.design-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.design-card:hover img {
+    transform: scale(1.12);
+}
+
+.design-card h3 {
+    color: #60a5fa;
+    text-align: center;
+}
+/* PROFESSIONAL FOOTER */
+
+footer {
+    background-color: #1e293b;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 50px;
+}
+
+footer h2 {
+    color: #60a5fa;
+}
+
+footer p {
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    margin: 10px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* PROFILE PICTURE */
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #60a5fa;
+    display: block;
+    margin: 20px auto;
+}
+
+
+/* CINEMATIC HERO SECTION */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 80px 10%;
+    overflow: hidden;
+    position: relative;
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(37, 99, 235, 0.16),
+            transparent 35%
+        );
+}
+
+.hero-content {
+    max-width: 650px;
+    z-index: 2;
+    animation: fadeUp 1s ease;
+}
+
+.hero-tag {
+    color: #60a5fa;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 7vw, 95px);
+    line-height: 1.05;
+    margin: 25px 0;
+    color: white;
+}
+
+.hero h1 span {
+    display: block;
+    background: linear-gradient(
+        90deg,
+        #60a5fa,
+        #a78bfa,
+        #60a5fa
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    color: #cbd5e1;
+    font-size: 22px;
+}
+
+.hero-description {
+    color: #94a3b8;
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.hero-secondary {
+    color: white;
+    text-decoration: none;
+}
+
+.hero-visual {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-orb {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        #bfdbfe,
+        #3b82f6 35%,
+        #312e81 70%,
+        #101827
+    );
+    box-shadow:
+        0 0 60px rgba(59, 130, 246, 0.4),
+        0 0 120px rgba(59, 130, 246, 0.2);
+    animation: floatOrb 5s ease-in-out infinite;
+}
+
+.hero-ring {
+    position: absolute;
+    width: 290px;
+    height: 290px;
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    border-radius: 50%;
+    animation: rotateRing 12s linear infinite;
+}
+
+@keyframes floatOrb {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* MOBILE HERO */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 75px 20px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        margin-top: 55px;
+        transform: scale(0.85);
+    }
+}
+
+</style>
+    <title>My Personal Portfolio</title>
+</head>
+<body>
+    
+<nav>
+    <h2>My Portfolio</h2>
+
+    <button class="menu-toggle" id="menu-toggle">
+    ☰
+</button>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="hero-tag">WELCOME TO MY DIGITAL WORLD</p>
+
+        <h1>
+            Building the
+            <span>Future.</span>
+        </h1>
+
+        <h2>I'm Paarthiv — Developer & Innovator.</h2>
+
+        <p class="hero-description">
+            Exploring technology, creating digital experiences
+            and turning ambitious ideas into reality.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#projects" class="btn">Explore My Work ↗</a>
+            <a href="#about" class="hero-secondary">Discover More ↓</a>
+        </div>
+
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+        <div class="hero-orb"></div>
+        <div class="hero-ring"></div>
+    </div>
+
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+
+    <img src="profile.jpeg" alt="My Profile Picture" class="profile-img">
+
+    <p>
+        I am a student passionate about technology,
+        science, coding and entrepreneurship.
+        I enjoy learning new things and creating
+        projects that solve real-world problems.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">Creative Thinking</div>
+    <div class="skill">Problem Solving</div>
+</section>
+
+
+<section id="projects">
+    <h2>My Projects</h2>
+
+    <div class="project-card">
+        <h3>My Portfolio Website</h3>
+        <p>A personal website built using HTML and CSS.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Proofly</h3>
+        <p>An education technology idea designed to promote transparency in student assignments.</p>
+    </div>
+
+    <div class="project-card">
+        <h3>Canva Graphic Design</h3>
+        <p>Creating posters, logos, YouTube thumbnails, presentations and social media designs using Canva.</p>
+    </div>
+</section>
+<section id="gallery">
+
+    <h2>My Design Gallery</h2>
+
+    <p>Some of my creative work made using Canva.</p>
+
+    <div class="design-grid">
+
+        <div class="design-card">
+            <img src="design1.png" alt="My poster design">
+            <h3>Poster Design</h3>
+        </div>
+
+        <div class="design-card">
+            <img src="design2.png" alt="My logo design">
+            <h3>Logo Design</h3>
+        </div>
+
+        <div class="design-card">
+            <img src="design3.png" alt="My presentation design">
+            <h3>Presentation Design</h3>
+        </div>
+
+    </div>
+
+</section>
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <p>
+    Have a creative idea or want to connect?
+    Feel free to reach out to me!
+</p>
+
+    <a href="mailto:spaarthiv@gmail.com" class="btn">
+        Email Me
+    </a>
+</section>
+
+<footer>
+
+    <h2>Paarthiv</h2>
+
+    <p>Future Developer | Innovator | Creative Designer</p>
+
+    <p>
+        Building ideas. Creating designs. Learning every day.
+    </p>
+
+    <a href="#home">Back to Top</a>
+    <a href="https://github.com/spaarthiv23"
+   target="_blank">
+   GitHub
+</a>
+
+    <p>© 2026 Paarthiv. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+// Select all project cards
+const projectCards = document.querySelectorAll(".project-card");
+
+// PREMIUM SCROLL REVEAL
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+// Observe every project card
+projectCards.forEach((card, index) => {
+
+    card.style.transitionDelay = `${index * 0.25}s`;
+
+    observer.observe(card);
+
+});
+
+// MOBILE NAVIGATION MENU
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+});
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+    });
+});
+
+</script>
+</body>
+</html>

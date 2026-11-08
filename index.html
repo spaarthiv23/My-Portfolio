@@ -525,71 +525,51 @@ footer a:hover {
     }
 }
 
-/* POKEMON CARD COLLECTION */
+/* PROFESSIONAL CONTACT FORM */
 
-#pokemon {
-    padding: 60px 10%;
+.contact-form {
+    max-width: 600px;
+    margin: 35px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
 }
 
-#pokemon > p {
-    color: #cbd5e1;
-}
-
-.pokemon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.pokemon-card {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 14px;
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.pokemon-card:hover {
-    transform: translateY(-7px);
-}
-
-.pokemon-card img {
-    width: 100%;
-    max-width: 240px;
-    height: 300px;
-    object-fit: contain;
-    border-radius: 10px;
-}
-
-.pokemon-card h3 {
-    color: #60a5fa;
-}
-
-.pokemon-card p {
-    color: #cbd5e1;
-}
-
-.pokemon-card h4 {
-    font-size: 23px;
-    color: white;
-}
-
-.available {
-    display: block;
-    color: #4ade80;
-    margin-bottom: 18px;
+.contact-form label {
+    color: #e2e8f0;
     font-weight: 600;
 }
 
-.pokemon-card .btn {
-    margin-bottom: 10px;
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #1e293b;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
 }
 
-@media (max-width: 600px) {
-    .pokemon-grid {
-        grid-template-columns: 1fr;
-    }
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    margin-top: 10px;
 }
 
 </style>
@@ -609,7 +589,6 @@ footer a:hover {
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#gallery">Gallery</a>
-        <a href="#pokemon">Pokémon Cards</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
@@ -714,85 +693,57 @@ footer a:hover {
     </div>
 
 </section>
-<section id="pokemon">
 
-    <h2>Pokémon Card Collection</h2>
-
-    <p>Explore my Pokémon cards available for sale!</p>
-
-    <div class="pokemon-grid">
-
-        <div class="pokemon-card">
-
-            <img src="charizard.jpeg" alt="Radiant Charizard">
-
-            <h3>Radiant Charizard</h3>
-
-            <p>Card Number: 020/159</p>
-
-            <h4>₹2,999</h4>
-
-            <span class="available">Available</span>
-
-            <a href="mailto:spaarthiv@gmail.com?subject=Radiant%20Charizard%20Enquiry" class="btn">
-                Enquire Now
-            </a>
-
-        </div>
-
-        <div class="pokemon-card">
-
-            <img src="mewtwo.jpeg" alt="Mewtwo VSTAR">
-
-            <h3>Mewtwo VSTAR</h3>
-
-            <p>Card Number: GG44/GG70</p>
-
-            <h4>Price on Request</h4>
-
-            <span class="available">Available</span>
-
-            <a href="mailto:spaarthiv@gmail.com?subject=Mewtwo%20VSTAR%20Enquiry" class="btn">
-                Enquire Now
-            </a>
-
-        </div>
-
-         <!-- ETERNATUS VMAX -->
-
-        <div class="pokemon-card">
-
-            <img src="eternatus.jpeg" alt="Eternatus VMAX">
-
-            <h3>Eternatus VMAX</h3>
-
-            <p>Card Number: TG22/TG30</p>
-
-            <h4>₹1,499</h4>
-
-            <span class="available">Available</span>
-
-            <a href="mailto:spaarthiv@gmail.com?subject=Eternatus%20VMAX%20Enquiry" class="btn">
-                Enquire Now
-            </a>
-
-        </div>
-
-
-    </div>
-
-</section>
 <section id="contact">
-    <h2>Contact Me</h2>
+    <h2>Let's Work Together</h2>
 
     <p>
-    Have a creative idea or want to connect?
-    Feel free to reach out to me!
-</p>
+        Have a project idea or a question?
+        Send me a message using the form below.
+    </p>
 
-    <a href="mailto:spaarthiv@gmail.com" class="btn">
-        Email Me
-    </a>
+    <form
+    class="contact-form"
+    action="https://formspree.io/f/mzeeqwaj"
+    method="POST"
+>
+        <label for="name">Your Name</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+        >
+        
+        <input
+    type="hidden"
+    name="_subject"
+    value="New Portfolio Enquiry"
+>
+
+        <label for="email">Your Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <label for="message">Your Message</label>
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Tell me about your project..."
+            required
+        ></textarea>
+
+        <button type="submit" class="btn">
+            Send Enquiry ↗
+        </button>
+    </form>
 </section>
 
 <footer>
